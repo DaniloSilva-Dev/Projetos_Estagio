@@ -1,0 +1,70 @@
+@media (min-width: 300px) and (max-width: 1024px) {
+  header,
+  main,
+  section,
+  aside,
+  footer {
+    width: 100%;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid black;
+  }
+  header {
+    text-align: center;
+  }
+
+  header span {
+    color: gray;
+  }
+  #nome {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: black;
+  }
+  header li {
+    list-style: none;
+    margin: 0 auto;
+    display: inline-block;
+  }
+
+  header a {
+    text-decoration: none;
+    color: black;
+  }
+  header li::after {
+    content: " /";
+  }
+  header li:last-child::after {
+    content: "";
+  }
+
+  #principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-top: 1px solid black;
+  }
+  #principal li {
+    list-style: none;
+  }
+  #principal a {
+    text-decoration: none;
+    color: black;
+  }
+  #principal .profile {
+    color: rgb(6, 117, 182);
+  }
+
+  #avaliacoes{
+    border-top: 1px solid black;
+  }
+  footer{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+}

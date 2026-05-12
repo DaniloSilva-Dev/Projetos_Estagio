@@ -1,4 +1,9 @@
-@media (min-width: 300px) and (max-width: 1024px) {
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@media (max-width: 767px) {
+  * {
+    box-sizing: border-box;
+  }
+
   header,
   main,
   section,
@@ -7,20 +12,31 @@
     width: 100%;
   }
   body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Comic Neue", cursive, sans-serif;
     border: 1px solid black;
   }
   header {
     text-align: center;
   }
+  header nav {
+    font-family: Arial, Helvetica, sans-serif;
+  }
 
   header span {
     color: gray;
+    display: block;
+    margin-bottom: 1rem;
+  }
+  header h1 {
+    margin-bottom: 0.5rem;
   }
   #nome {
     font-size: 1.5em;
     font-weight: bold;
     color: black;
+  }
+  header ul {
+    padding-left: 0;
   }
   header li {
     list-style: none;
@@ -56,15 +72,142 @@
   #principal .profile {
     color: rgb(6, 117, 182);
   }
+  #projetos ul {
+    background-color: silver;
+    padding-left: 0;
+    border-top: 1px solid black;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  #projetos li {
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+  }
+  #projetos li a {
+    display: block;
+  }
+  #projetos h2 {
+    margin: 0.5rem;
+  }
+  #exp {
+    background-color: silver;
+    text-align: left;
+  }
+  #exp a {
+    padding-left: 0.5rem;
+  }
+  #exp h2 {
+    background-color: white;
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+    margin: 0;
+    text-align: center;
+  }
+  #exp p {
+    padding: 0.5rem;
+    margin: 0;
+  }
+  #open-source {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: 0.5rem;
+  }
+  #open-source h3 {
+    margin: 0.2rem;
+    font-weight: normal;
+  }
 
-  #avaliacoes{
+  #edu {
+    text-align: left;
+  }
+  #edu h2 {
+    text-align: center;
+    margin-top: 1rem;
+  }
+  #edu p,
+  h3 {
+    padding-left: 0.5rem;
+  }
+  #edu li::before {
+    content: "- ";
+  }
+
+  #avaliacoes {
     border-top: 1px solid black;
   }
-  footer{
+  #avaliacoes ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  #comentarios li:nth-child(n + 2) {
+    display: none;
+  }
+  #comentarios li {
+    border: 1px solid black;
+    border-radius: 25px;
+    padding: 0.5rem;
+    margin: 0.7rem;
+  }
+  #comentarios li span {
+    display: block;
+    color: dimgray;
+  }
+
+  footer {
     text-align: center;
     margin-bottom: 1rem;
   }
 }
+@media (min-width: 768px) {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+  }
+  header {
+    display: block;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    margin-bottom: 4.5rem;
+  }
+  header ul {
+    display: flex;
+    align-items: flex-end;
+    gap: 1rem;
+    padding-right: 1rem;
+  }
+  header a {
+    color: black;
+  }
+  header li::after {
+    content: " /";
+  }
+  header li:last-child::after {
+    content: "";
+  }
+  header h1 {
+    font-size: 3rem;
+  }
+  #nome {
+    color: black;
+    font-weight: bold;
+  }
+  header span {
+    color: silver;
+    font-size: 1.5rem;
+  }
 
-@media (min-width: 1024px) {
+  #principal {
+    border-top: 1px solid black;
+    display: flex;
+    border-bottom: 1px solid black;
+  }
+  
 }

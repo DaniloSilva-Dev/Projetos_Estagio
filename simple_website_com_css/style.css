@@ -166,10 +166,14 @@
     list-style: none;
     text-decoration: none;
   }
+  a {
+    color: black;
+  }
   header {
     display: block;
     text-align: center;
     margin-bottom: 3rem;
+    margin-top: 2rem;
   }
   header nav {
     display: flex;
@@ -183,9 +187,6 @@
     gap: 1rem;
     padding-right: 1rem;
   }
-  header a {
-    color: black;
-  }
   header li::after {
     content: " /";
   }
@@ -196,6 +197,7 @@
     font-size: 3rem;
   }
   #nome {
+    padding-left: 1rem;
     color: black;
     font-weight: bold;
   }
@@ -206,8 +208,133 @@
 
   #principal {
     border-top: 1px solid black;
-    display: flex;
+    border-bottom: 1px solid black;
+    display: grid;
+    grid-template-columns: 0.6fr 1.5fr 1fr;
+  }
+
+  #projetos {
+    border-right: 1px solid black;
+  }
+
+  #projetos h2 {
+    padding-left: 1rem;
+    font-size: 1.5 rem;
+    margin-top: 0.3rem;
+  }
+  #projetos li {
+    margin: 0.8rem 0 0.8rem;
+    padding: 0.3rem;
     border-bottom: 1px solid black;
   }
-  
+  #projetos li:last-child {
+    border-bottom: none;
+  }
+
+  #projetos li a {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+  }
+
+  #exp {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  #exp h2,
+  #exp a,
+  #exp p {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+  #exp a,
+  #exp p,
+  #exp h2,
+  #exp h3 {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+  }
+  #open-source {
+    border-top: 1px solid black;
+    padding-right: 0.5rem;
+  }
+  #open-source h3 {
+    font-weight: normal;
+  }
+
+  .profile {
+    color: rgb(7, 146, 201);
+    font-size: 1.5rem;
+  }
+
+  #open-source p,
+  #open-source a,
+  #open-source h3 {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    font-size: 1.5rem;
+  }
+
+  #edu {
+    border-left: 1px solid black;
+    padding-left: 0.8rem;
+  }
+
+  #edu h2,
+  #edu p,
+  #edu h3 {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+    font-size: 1.25rem;
+  }
+
+  #edu h2 {
+    font-size: 1.5rem;
+  }
+  #edu h3 {
+    font-weight: normal;
+    margin: 1rem 0 1rem 0;
+  }
+  #edu li {
+    font-size: 1.25rem;
+    margin-left: 1rem;
+  }
+  #edu li::marker {
+    content: "-";
+  }
+
+  #avaliacoes ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  #avaliacoes li {
+    border: 1px solid black;
+    border-radius: 40px;
+    padding: 1rem;
+    font-size: 1.3rem;
+    margin: 0 1.5rem 0 1.5rem;
+
+    max-width: 300px;
+  }
+
+  #avaliacoes h3 {
+    margin: 2rem 0 2rem;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+  }
+  #comentarios {
+    margin: 0 1rem 0 1rem;
+  }
+  #avaliacoes span {
+    display: block;
+    color: silver;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
 }

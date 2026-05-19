@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário Acessível UI</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <main>
+        <aside class="formulario">
+          <form>
+            <label for="nome_completo">Nome Completo</label>
+            <input
+              type="text"
+              id="nome_completo"
+              name="nome_completo"
+              placeholder="Digite seu nome aqui!"
+              required
+            />
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="email@gmail.com"
+              required
+            />
+
+            <div class="senha">
+              <label for="senha">Crie uma Senha</label>
+              <div class="campo-senha">
+                <input
+                  type="password"
+                  id="senha"
+                  name="senha"
+                  placeholder="xxxxxxxx"
+                  aria-describedby="senha-status"
+                  required
+                />
+
+                <button
+                  type="button"
+                  aria-label="Mostrar senha"
+                  aria-pressed="false"
+                >
+                  <img src="assets/olho-aberto.svg" alt="" />
+                </button>
+              </div>
+              <label for="confirmar_senha">Confirme a Senha</label>
+              <div class="campo-senha">
+                <input
+                  type="password"
+                  id="confirmar_senha"
+                  name="confirmar_senha"
+                  placeholder="xxxxxxxx"
+                  required
+                />
+                <button
+                  type="button"
+                  aria-label="Mostrar senha"
+                  aria-pressed="false"
+                >
+                  <img src="assets/olho-aberto.svg" alt="" />
+                </button>
+              </div>
+            </div>
+            <button type="submit" class="botao_perfil">Atualizar Perfil</button>
+          </form>
+        </aside>
+        <aside class="progressao">
+          <div class="progresso">
+            <span>65%</span>
+          </div>
+          <div class="etapas">
+            <span>Progresso do Perfil</span>
+            <ul>
+              <li><del>Criar Conta </del></li>
+              <li><del>Atualizar Progresso do Roadmap</del></li>
+              <li><del>Defixar perfil público</del></li>
+              <li>Complete seu primeiro projeto</li>
+              <li>Convide seus Amigos</li>
+            </ul>
+          </div>
+        </aside>
+      </main>
+      <footer>&copy; Licenciado Sob MIT</footer>
+    </div>
+  </body>
+</html>

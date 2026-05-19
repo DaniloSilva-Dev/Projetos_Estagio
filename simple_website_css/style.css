@@ -154,13 +154,18 @@ header li:last-child::after {
 .edu h2 {
   text-align: center;
   margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .edu p,
-.edu h3 {
+.edu h3,
+.edu li {
   padding-left: 0.5rem;
 }
 
+.edu h3 {
+  margin: 0.8rem;
+}
 .edu li::before {
   content: "- ";
 }
@@ -173,7 +178,9 @@ header li:last-child::after {
   list-style: none;
   padding-left: 0;
 }
-
+.avaliacoes h3 {
+  margin: 1rem;
+}
 .comentarios li:nth-child(n + 2) {
   display: none;
 }

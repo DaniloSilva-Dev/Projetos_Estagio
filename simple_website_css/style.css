@@ -1,0 +1,331 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-color: black;
+  --secundary-color: silver;
+}
+
+body {
+  font-size: 10px;
+  font-family: "Comic Neue", cursive, sans-serif;
+  border: 1px solid var(--primary-color);
+}
+
+header {
+  text-align: center;
+}
+
+header nav {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header span {
+  color: gray;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+.nome {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+header ul {
+  padding-left: 0;
+}
+
+header li {
+  list-style: none;
+  margin: 0 auto;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+header li::after {
+  content: " /";
+}
+
+header li:last-child::after {
+  content: "";
+}
+
+.principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid var(--primary-color);
+}
+
+.principal li {
+  list-style: none;
+}
+
+.principal .profile {
+  color: rgb(6, 117, 182);
+}
+
+.projetos ul {
+  background-color: var(--secundary-color);
+  padding-left: 0;
+  border-top: 1px solid var(--primary-color);
+}
+
+.projetos li {
+  border-bottom: 1px solid var(--primary-color);
+  padding: 0.5rem;
+}
+
+.projetos li a {
+  display: block;
+}
+
+.projetos h2 {
+  margin: 0.5rem;
+}
+
+.exp {
+  background-color: var(--secundary-color);
+  text-align: left;
+}
+
+.exp a {
+  padding-left: 0.5rem;
+}
+
+.exp h2 {
+  background-color: white;
+  border-bottom: 1px solid var(--primary-color);
+  padding: 0.5rem;
+  margin: 0;
+  text-align: center;
+}
+.exp p {
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.open-source {
+  border-top: 1px solid var(--primary-color);
+  border-bottom: 1px solid var(--primary-color);
+  padding: 0.5rem;
+}
+
+.open-source h3 {
+  margin: 0.2rem;
+  font-weight: normal;
+}
+
+.edu {
+  text-align: left;
+}
+
+.edu h2 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.edu p,
+.edu h3,
+.edu li {
+  padding-left: 0.5rem;
+}
+
+.edu h3 {
+  margin: 0.8rem;
+}
+.edu li::before {
+  content: "- ";
+}
+
+.avaliacoes {
+  border-top: 1px solid var(--primary-color);
+}
+
+.avaliacoes ul {
+  list-style: none;
+  padding-left: 0;
+}
+.avaliacoes h3 {
+  margin: 1rem;
+}
+.comentarios li:nth-child(n + 2) {
+  display: none;
+}
+
+.comentarios li {
+  border: 1px solid var(--primary-color);
+  border-radius: 25px;
+  padding: 0.5rem;
+  margin: 0.7rem;
+}
+.comentarios li span {
+  display: block;
+  color: dimgray;
+}
+
+footer {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  header {
+    display: block;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7rem;
+    margin: 0 1rem 4.5rem;
+  }
+  header h1 {
+    font-size: 3rem;
+  }
+  .nome {
+    padding-left: 1rem;
+  }
+  header span {
+    color: var(--secundary-color);
+    font-size: 1.8rem;
+  }
+
+  .principal {
+    display: grid;
+    grid-template-columns: 0.6fr 1.5fr 1fr;
+    align-items: stretch;
+    text-align: initial;
+  }
+
+  .projetos {
+    border-right: 1px solid var(--primary-color);
+    text-align: center;
+  }
+
+  .projetos ul {
+    border-top: none;
+    background-color: white;
+  }
+
+  .projetos li {
+    padding: 0;
+    border-bottom: 1px solid var(--primary-color);
+    text-align: left;
+    padding-left: 1rem;
+    margin: 1rem 0 1rem;
+  }
+
+  .projetos li:last-child {
+    border-bottom: none;
+  }
+
+  .projetos li a {
+    font-size: 1.5rem;
+  }
+
+  .exp {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: white;
+  }
+
+  .exp p,
+  .exp a,
+  .exp h3 {
+    font-size: 1.5rem;
+  }
+
+  .exp h2 {
+    border-bottom: none;
+  }
+
+  .open-source {
+    border-bottom: none;
+  }
+
+  .open-source h3 {
+    font-weight: normal;
+  }
+
+  .profile {
+    color: rgb(7, 146, 201);
+    font-size: 1.15rem;
+  }
+
+  .edu {
+    border-left: 1px solid var(--primary-color);
+    padding: 0 0.8rem 0.8rem;
+    text-align: left;
+    font-size: 1.5rem;
+  }
+  .edu h2 {
+    text-align: center;
+    margin: 0;
+    padding: 0.5rem;
+  }
+  .edu h3 {
+    font-weight: normal;
+    margin: 1rem 0 1rem 0;
+  }
+
+  .avaliacoes ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .avaliacoes li {
+    border: 1px solid var(--primary-color);
+    border-radius: 40px;
+    padding: 1rem;
+    font-size: 1.5rem;
+    margin: 0 1.5rem 0 1.5rem;
+
+    max-width: 300px;
+  }
+
+  .avaliacoes h3 {
+    margin: 2rem 0 2rem;
+    font-size: 1.5rem;
+    margin-left: 2rem;
+  }
+
+  .comentarios {
+    margin: 0 1rem 0 1rem;
+  }
+
+  .comentarios li:nth-child(n + 2) {
+    display: block;
+  }
+
+  .avaliacoes span {
+    display: block;
+    color: var(--secundary-color);
+  }
+
+  footer {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+  }
+}

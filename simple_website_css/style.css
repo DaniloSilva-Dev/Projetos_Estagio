@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -12,18 +10,7 @@
 }
 
 body {
-  font-size: 16x;
-}
-
-header,
-main,
-section,
-aside,
-footer {
-  width: 100%;
-}
-
-body {
+  font-size: 10px;
   font-family: "Comic Neue", cursive, sans-serif;
   border: 1px solid var(--primary-color);
 }
@@ -47,7 +34,7 @@ header h1 {
 }
 
 .nome {
-  font-size: 1.5em;
+  font-size: 2rem;
   font-weight: bold;
   color: var(--primary-color);
 }
@@ -62,7 +49,7 @@ header li {
   display: inline-block;
 }
 
-header a {
+a {
   text-decoration: none;
   color: var(--primary-color);
 }
@@ -85,11 +72,6 @@ header li:last-child::after {
 
 .principal li {
   list-style: none;
-}
-
-.principal a {
-  text-decoration: none;
-  color: var(--primary-color);
 }
 
 .principal .profile {
@@ -202,10 +184,6 @@ footer {
 }
 
 @media (min-width: 768px) {
-  a {
-    color: var(--primary-color);
-  }
-
   header {
     display: block;
     text-align: center;
@@ -216,7 +194,7 @@ footer {
   header nav {
     display: flex;
     justify-content: space-between;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin: 0 1rem 4.5rem;
   }
   header h1 {
@@ -224,16 +202,13 @@ footer {
   }
   .nome {
     padding-left: 1rem;
-    color: var(--primary-color);
-    font-weight: bold;
   }
   header span {
     color: var(--secundary-color);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .principal {
-    border-top: 1px solid var(--primary-color);
     display: grid;
     grid-template-columns: 0.6fr 1.5fr 1fr;
     align-items: stretch;
@@ -263,7 +238,7 @@ footer {
   }
 
   .projetos li a {
-    font-size: 1.15rem;
+    font-size: 1.5rem;
   }
 
   .exp {
@@ -276,7 +251,7 @@ footer {
   .exp p,
   .exp a,
   .exp h3 {
-    font-size: 1.15rem;
+    font-size: 1.5rem;
   }
 
   .exp h2 {
@@ -284,8 +259,6 @@ footer {
   }
 
   .open-source {
-    border-top: 1px solid var(--primary-color);
-    padding-right: 0.5rem;
     border-bottom: none;
   }
 
@@ -302,7 +275,7 @@ footer {
     border-left: 1px solid var(--primary-color);
     padding: 0 0.8rem 0.8rem;
     text-align: left;
-    font-size: 1.15rem;
+    font-size: 1.5rem;
   }
   .edu h2 {
     text-align: center;
@@ -325,7 +298,7 @@ footer {
     border: 1px solid var(--primary-color);
     border-radius: 40px;
     padding: 1rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin: 0 1.5rem 0 1.5rem;
 
     max-width: 300px;
@@ -342,7 +315,7 @@ footer {
   }
 
   .comentarios li:nth-child(n + 2) {
-    display: list-item;
+    display: block;
   }
 
   .avaliacoes span {

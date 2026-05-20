@@ -4,6 +4,11 @@
   padding: 0;
 }
 
+:root {
+  --primary-color: black;
+  --secundary-color: lightgray;
+}
+
 body {
   font-size: 10px;
 }
@@ -11,11 +16,12 @@ body {
 .layout {
   padding: 1rem;
   gap: 2rem;
-  border: 2px solid black;
+  border: 2px solid var(--primary-color);
   border-radius: 10px;
   margin: 0.5rem;
   height: 34rem;
 }
+
 main {
   display: flex;
   gap: 2rem;
@@ -24,6 +30,7 @@ main {
   width: 100%;
   height: 100%;
 }
+
 .formulario {
   gap: 0.5rem;
   font-size: 1rem;
@@ -40,7 +47,7 @@ main {
 }
 
 .formulario input {
-  border: 2px solid black;
+  border: 2px solid var(--primary-color);
   border-radius: 5px;
   margin: 0 1rem 0.8rem 0;
   padding-left: 0.3rem;
@@ -51,7 +58,7 @@ input:invalid {
 }
 
 input:placeholder-shown {
-  border-color: black;
+  border-color: var(--primary-color);
 }
 
 .erro {
@@ -95,19 +102,24 @@ input:invalid:not(:placeholder-shown) + .erro {
 .campo-senha button {
   border: none;
 }
-.botao_perfil {
+
+.botao-perfil {
   color: white;
-  background-color: black;
+  background-color: var(--primary-color);
   border-radius: 10px;
   padding: 0.35rem 0 0.35rem 0;
   width: 80%;
   align-self: center;
 }
+
 .progresso {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: conic-gradient(black 0% 65%, lightgray 65% 100%);
+  background: conic-gradient(
+    var(--primary-color) 0% 65%,
+    var(--secundary-color) 65% 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
@@ -124,6 +136,7 @@ input:invalid:not(:placeholder-shown) + .erro {
   border-radius: 50%;
   position: absolute;
 }
+
 .progressao span {
   position: relative;
   z-index: 1;
@@ -135,15 +148,17 @@ input:invalid:not(:placeholder-shown) + .erro {
 }
 
 .etapas ul {
-  background-color: rgb(231, 231, 231);
+  background-color: var(--secundary-color);
   border-radius: 10px;
   padding: 1rem;
   list-style-type: none;
   margin-top: 0.5rem;
 }
+
 .etapas li del {
   color: grey;
 }
+
 footer {
   text-align: center;
   font-size: 1rem;

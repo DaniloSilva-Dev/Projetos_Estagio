@@ -80,7 +80,7 @@ input:invalid:not(:placeholder-shown) + .erro {
   position: relative;
 }
 
-.campo-senha input {
+.senha-input{
   padding-right: 1.5rem;
 }
 
@@ -92,6 +92,8 @@ input:invalid:not(:placeholder-shown) + .erro {
   background: none;
   width: 15px;
   height: 15px;
+  border: none;
+  cursor: pointer;
 }
 
 .campo-senha img {
@@ -99,9 +101,6 @@ input:invalid:not(:placeholder-shown) + .erro {
   height: 100%;
 }
 
-.campo-senha button {
-  border: none;
-}
 
 .botao-perfil {
   color: white;

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conversor de Temperatura</title>
+    <link rel="stylesheet" href="src/styles/style.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <h1>Conversor de Temperatura</h1>
+      <p>Coloque a temperatura, selecione as unidades e converta!</p>
+
+      <form class="formulario-conversao">
+        <input
+          class="temperatura-enviada"
+          type="text"
+          placeholder="0.00"
+          required
+        />
+        <select class="unidade-origem" required>
+          <option value="" disabled selected>De</option>
+          <option value="Celsius">Celsius</option>
+          <option value="Fahrenheit">Fahrenheit</option>
+          <option value="Kelvin">Kelvin</option>
+        </select>
+        <select class="unidade-destino" required>
+          <option value="" disabled selected>Para</option>
+          <option value="Celsius">Celsius</option>
+          <option value="Fahrenheit">Fahrenheit</option>
+          <option value="Kelvin">Kelvin</option>
+        </select>
+        <button type="submit">Converter</button>
+      </form>
+      <div class="resultado"></div>
+    </div>
+    <script src="src/javascript/script.js"></script>
+  </body>
+</html>

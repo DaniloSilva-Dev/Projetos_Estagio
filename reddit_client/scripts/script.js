@@ -17,24 +17,24 @@ const container = document.querySelector(".container-subreddit");
 const renderizarSubreddits = () => {
   container.innerHTML = "";
   subreddits.forEach((sub) => {
-    container.innerHTML += `
+    container.innerHTML += /* html */ `
      <div class="container-subreddit" data-nome="${sub}">
-         <div class="subreddit">
-      <div class="menu">
-      <h2>/r/${sub}</h2>
+        <div class="subreddit">
+          <div class="menu">
+            <h2>/r/${sub}</h2>
 
-      <button class="dot-menu-button">
-        <img class="dot-menu" src="assets/dot-menu.svg">
-      </button>
+            <button class="dot-menu-button">
+              <img class="dot-menu" src="assets/dot-menu.svg">
+            </button>
 
-      <div class="opcoes-menu">
-        <button class="apagar-subreddit">Apagar</button>
-        <button class="atualizar-subreddit">Atualizar</button>
-      </div>
-    </div>
-    
-    <ul class="lista-posts"></ul>
-    </div>
+            <div class="opcoes-menu">
+              <button class="apagar-subreddit">Apagar</button>
+              <button class="atualizar-subreddit">Atualizar</button>
+            </div>
+          </div>
+  
+          <ul class="lista-posts"></ul>
+        </div>
       </div>
     `;
   });

@@ -1,6 +1,12 @@
 const subreddits = [];
-
-const lista = document.querySelectorAll(".lista-posts");
+const posts = [
+  {
+    title:
+      "[AskJS] construiu um runtime de navegador experimental para aprender WebAssembly, Workers, SharedArrayBuffer, Atomics e arquitetura de runtime Exemplo de Post",
+    upvotes: 5,
+    url: "https://www.reddit.com/r/javascript/comments/1ttoch2/askjs_built_an_experimental_browser_runtime_to/",
+  },
+];
 
 const botaoAdicionarSubreddit = document.querySelector(
   ".botao-adicionar-subreddit",
@@ -18,8 +24,8 @@ const renderizarSubreddits = () => {
   container.innerHTML = "";
   subreddits.forEach((sub) => {
     container.innerHTML += /* html */ `
-     <div class="container-subreddit" data-nome="${sub}">
-        <div class="subreddit">
+     <div class="container-subreddit">
+        <div class="subreddit" data-nome="${sub}">
           <div class="menu">
             <h2>/r/${sub}</h2>
 
@@ -32,31 +38,42 @@ const renderizarSubreddits = () => {
               <button class="atualizar-subreddit">Atualizar</button>
             </div>
           </div>
-  
-          <ul class="lista-posts"></ul>
+
+          <ul class="lista-posts" id="lista-${sub}"></ul>
         </div>
       </div>
     `;
   });
 };
 
-const renderizarPosts = () => {
+function renderizarPosts(subreddit) {
+  const lista = document.getElementById(`lista-${subreddit}`);
+
   lista.innerHTML = "";
 
   const postsOrdenados = [...posts].sort((a, b) => b.upvotes - a.upvotes);
 
   postsOrdenados.forEach((post) => {
-    lista.innerHTML += `
+    lista.innerHTML += /* html */ `
         <li>
             <div class="upvotes">
                 ▲
                 <span class="upvote">${post.upvotes}</span>
             </div>
-            <a href="${post.url}" target="_blank">${post.title}</a>
+            <a href="${post.url}" target="_blank" rel="noopener" title="${post.title}">${post.title}</a>
         </li>
         `;
   });
-};
+}
+
+function buscarColuna(subreddit) {
+  fetch(`https://www.reddit.com/r/${subreddit}.json`)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((err) => console.log(err));
+}
 
 const atualizarInterface = () => {
   renderizarSubreddits();
@@ -120,6 +137,7 @@ botaoEnviarSubreddit.addEventListener("click", () => {
   }
 
   subreddits.push(nomeSubreddit);
+  renderizarPosts(nomeSubreddit);
   atualizarInterface();
 
   inputSubreddit.value = "";

@@ -119,8 +119,11 @@ li {
 .subreddit li a {
   display: block;
   width: 100%;
-  color: inherit;
   text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.2rem;
 }
 
 .subreddit.menu-ativo {
@@ -138,9 +141,8 @@ li {
 }
 .novo-subreddit {
   display: flex;
-  align-items: flex-start;
-  justify-content: center;
   min-height: 100vh;
+  justify-content: center;
 }
 
 .botao-adicionar-subreddit {
@@ -159,10 +161,9 @@ li {
 
 .popup.ativo {
   display: flex;
-  align-self: center;
-  justify-self: center;
-  flex-direction: column;
-  justify-content: center;
+  position: fixed;
+  top: 40%;
+  left: 35%;
   width: 300px;
   height: 120px;
   font-size: 1.3rem;
@@ -171,6 +172,11 @@ li {
   border-radius: 10px;
   padding: 0.5rem;
   transition: 0.2s;
+}
+
+.form-novo-subreddit {
+  display: flex;
+  flex-direction: column;
 }
 
 .enviar-nome-subreddit {

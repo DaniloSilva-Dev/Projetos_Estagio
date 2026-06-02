@@ -4,17 +4,17 @@ const app = express();
 const PORT = 3001;
 
 // Mock data generator
-const generateMockPost = (index) => ({
+const generateMockPost = (index, subreddit = "javascript") => ({
   kind: "t3",
   data: {
     id: `${Math.random().toString(36).substr(2, 9)}`,
     title: `Mock Post #${index} - ${generateRandomTitle()}`,
     author: `user_${Math.floor(Math.random() * 1000)}`,
-    subreddit: "javascript",
+    subreddit: subreddit,
     score: Math.floor(Math.random() * 10000),
     num_comments: Math.floor(Math.random() * 500),
     created_utc: Math.floor(Date.now() / 1000) - Math.random() * 86400,
-    url: `https://reddit.com/r/javascript/comments/${Math.random().toString(36).substr(2, 9)}`,
+    url: `/r/javascript/comments/${Math.random().toString(36).substr(2, 9)}.json`,
     thumbnail: "self",
     selftext: generateRandomText(),
   },
@@ -111,7 +111,9 @@ const buildCommentTree = (parentDepth = 0, maxDepth = 3) => {
 // Mock endpoint for subreddit data
 app.get("/r/:subreddit.json", (req, res) => {
   const { subreddit } = req.params;
-  const posts = Array.from({ length: 25 }, (_, i) => generateMockPost(i + 1));
+  const posts = Array.from({ length: 25 }, (_, i) =>
+    generateMockPost(i + 1, subreddit),
+  );
 
   res.json({
     kind: "Listing",

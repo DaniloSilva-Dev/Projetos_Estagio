@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "node mock-server.js",
+    "dev:web": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -14,7 +16,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "concurrently": "^10.0.3",
     "detect-libc": "^2.1.2",
+    "express": "^5.2.1",
     "fdir": "^6.5.0",
     "lightningcss": "^1.32.0",
     "lightningcss-linux-x64-gnu": "^1.32.0",

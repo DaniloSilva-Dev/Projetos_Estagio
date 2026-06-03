@@ -1,6 +1,6 @@
 const subreddits = [];
 
-const posts = [];
+const posts = {};
 
 const botaoAdicionarSubreddit = document.querySelector(
   ".botao-adicionar-subreddit",
@@ -34,15 +34,43 @@ const renderizarSubreddits = () => {
         </div>
     `;
   });
+
+  subreddits.forEach((sub) => {
+    if (posts[sub]) {
+      renderizarPosts(sub);
+    }
+  });
 };
+
+function buscarColuna(subreddit) {
+  fetch(`/api/r/${subreddit}.json`)
+    .then((res) => res.json())
+    .then((data) => {
+      const postsFormatados = data.data.children.slice(0, 5).map((post) => ({
+        title: post.data.title,
+        url: post.data.url,
+        upvotes: (Math.random(0, 1001) * 1000).toFixed(0),
+      }));
+
+      posts[subreddit] = postsFormatados;
+      renderizarPosts(subreddit);
+    })
+    .catch((erro) => {
+      console.log("Erro:", erro);
+    });
+}
 
 function renderizarPosts(subreddit) {
   const lista = document.getElementById(`lista-${subreddit}`);
+  if (!lista) return;
 
   lista.innerHTML = "";
 
-  const postsOrdenados = [...posts].sort((a, b) => b.upvotes - a.upvotes);
+  const postsTopicos = posts[subreddit] || [];
 
+  const postsOrdenados = [...postsTopicos].sort(
+    (a, b) => b.upvotes - a.upvotes,
+  );
   postsOrdenados.forEach((post) => {
     lista.innerHTML += /* html */ `
         <li>
@@ -54,33 +82,19 @@ function renderizarPosts(subreddit) {
         </li>
         `;
   });
-}
 
-function buscarColuna(subreddit) {
-  fetch(`/api/r/${subreddit}.json`)
-    .then((res) => res.json())
-    .then((data) => {
-      const postsData = data.data.children;
-
-      postsData.forEach((post) => {
-        posts.push({
-          title: post.data.title,
-          url: post.data.url,
-          upvotes: post.data.ups,
-        });
-      });
-      posts.push(...postsData.slice(0, 5));
-      renderizarPosts(subreddit);
-    })
-    .catch((erro) => {
-      console.log("Erro:", erro);
-    });
+  subreddits.forEach((sub) => {
+    if (postsTopicos[sub]) {
+      renderizarPosts(sub);
+    }
+  });
 }
 
 const atualizarInterface = () => {
   renderizarSubreddits();
   ativarEventosMenu();
   ativarEventosApagar();
+  ativarEventosAtualizar();
 };
 
 const ativarEventosMenu = () => {
@@ -127,6 +141,19 @@ ativarEventosApagar = () => {
   });
 };
 
+const ativarEventosAtualizar = () => {
+  const botoesAtualizar = document.querySelectorAll(".atualizar-subreddit");
+
+  botoesAtualizar.forEach((botao)=>{
+    botao.addEventListener("click", () => {
+      const coluna = botao.closest(".subreddit");
+      const nome = coluna.dataset.nome;
+
+      buscarColuna(nome);
+    });
+  });
+}
+
 botaoAdicionarSubreddit.addEventListener("click", () => {
   popup.classList.toggle("ativo");
 });
@@ -139,6 +166,7 @@ botaoEnviarSubreddit.addEventListener("click", () => {
   }
 
   subreddits.push(nomeSubreddit);
+  buscarColuna(nomeSubreddit);
   atualizarInterface();
 
   inputSubreddit.value = "";

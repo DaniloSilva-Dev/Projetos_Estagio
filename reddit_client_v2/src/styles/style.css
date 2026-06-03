@@ -39,7 +39,6 @@ li {
   position: relative;
 }
 
-
 .dot-menu-button {
   width: 21px;
   height: 21px;
@@ -111,6 +110,7 @@ li {
   margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--secondary-color);
   text-align: center;
+  color: var(--text-color);
 }
 
 .subreddit li a {

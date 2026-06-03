@@ -39,13 +39,6 @@ li {
   position: relative;
 }
 
-.dot-menu {
-  width: 19px;
-  height: 19px;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-}
 
 .dot-menu-button {
   width: 21px;
@@ -54,6 +47,10 @@ li {
   border: none;
   padding: 0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
 }
 
 .opcoes-menu {

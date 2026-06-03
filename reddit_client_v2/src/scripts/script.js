@@ -1,12 +1,6 @@
 const subreddits = [];
-const posts = [
-  {
-    title:
-      "[AskJS] construiu um runtime de navegador experimental para aprender WebAssembly, Workers, SharedArrayBuffer, Atomics e arquitetura de runtime Exemplo de Post",
-    upvotes: 5,
-    url: "https://www.reddit.com/r/javascript/comments/1ttoch2/askjs_built_an_experimental_browser_runtime_to/",
-  },
-];
+
+const posts = [];
 
 const botaoAdicionarSubreddit = document.querySelector(
   ".botao-adicionar-subreddit",
@@ -24,15 +18,12 @@ const renderizarSubreddits = () => {
   container.innerHTML = "";
   subreddits.forEach((sub) => {
     container.innerHTML += /* html */ `
-     <div class="container-subreddit">
         <div class="subreddit" data-nome="${sub}">
           <div class="menu">
             <h2>/r/${sub}</h2>
-
             <button class="dot-menu-button">
-              <img class="dot-menu" src="assets/dot-menu.svg">
+              ⁝
             </button>
-
             <div class="opcoes-menu">
               <button class="apagar-subreddit">Apagar</button>
               <button class="atualizar-subreddit">Atualizar</button>
@@ -41,7 +32,6 @@ const renderizarSubreddits = () => {
 
           <ul class="lista-posts" id="lista-${sub}"></ul>
         </div>
-      </div>
     `;
   });
 };
@@ -70,7 +60,17 @@ function buscarColuna(subreddit) {
   fetch(`/api/r/${subreddit}.json`)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      const postsData = data.data.children;
+
+      postsData.forEach((post) => {
+        posts.push({
+          title: post.data.title,
+          url: post.data.url,
+          upvotes: post.data.ups,
+        });
+      });
+      posts.push(...postsData.slice(0, 5));
+      renderizarPosts(subreddit);
     })
     .catch((erro) => {
       console.log("Erro:", erro);

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reddit Client</title>
+    <link rel="stylesheet" href="./src/styles/style.css" />
+  </head>
+  <body>
+    <div class="layout">
+        <div class = "container-subreddit">
+        </div>
+        <div class="novo-subreddit">
+          <button
+            class="botao-adicionar-subreddit"
+            aria-label="Adicionar subreddit"
+          >
+          +
+        </button>
+      </div>
+          <div class="popup">
+            <form class="form-novo-subreddit" onsubmit="return false;">
+            <p>Coloque o nome da subreddit</p>
+              <input type="text" class="input-subreddit"/>
+              <button class="enviar-nome-subreddit" aria-required="true" type="submit">Adicionar Subreddit</button>
+              </form>
+          </div>
+      </main>
+    </div>
+    <footer>&copy; Licenciado sob MIT</footer>
+    <script src="./src/scripts/script.js"></script>
+  </body>
+</html>

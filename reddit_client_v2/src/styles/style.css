@@ -1,0 +1,198 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ffffff;
+  --secondary-color: #000000;
+  --text-color: #333333;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  font-size: 10px;
+}
+.layout {
+  display: flex;
+  margin: 0.3rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: 5px;
+}
+
+main {
+  display: flex;
+}
+
+li {
+  list-style: none;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.dot-menu-button {
+  width: 21px;
+  height: 21px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.opcoes-menu {
+  display: none;
+}
+
+.opcoes-menu.ativo {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  width: 130px;
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 0.5rem;
+  top: 100%;
+  left: 7rem;
+  transition: 0.2s;
+}
+
+.opcoes-menu button {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.opcoes-menu button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border-radius: 10px;
+}
+
+.subreddit {
+  border-right: 1px solid var(--secondary-color);
+  width: 250px;
+  min-height: 100vh;
+  font-size: 1rem;
+}
+
+.subreddit li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.subreddit h2,
+.subreddit li {
+  font-size: 1.3rem;
+  font-weight: normal;
+  padding: 0.5rem;
+}
+
+.subreddit li {
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--secondary-color);
+  text-align: center;
+}
+
+.subreddit li a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.2rem;
+  color: inherit;
+}
+
+.subreddit.menu-ativo {
+  color: silver;
+}
+
+.upvotes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1rem;
+}
+.container-subreddit {
+  display: flex;
+}
+.novo-subreddit {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+}
+
+.botao-adicionar-subreddit {
+  width: 40px;
+  height: 40px;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.popup {
+  display: none;
+}
+
+.popup.ativo {
+  display: flex;
+  position: fixed;
+  top: 40%;
+  left: 35%;
+  width: 300px;
+  height: 120px;
+  font-size: 1.3rem;
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 0.5rem;
+  transition: 0.2s;
+}
+
+.form-novo-subreddit {
+  display: flex;
+  flex-direction: column;
+}
+
+.enviar-nome-subreddit {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  padding: 0.3rem;
+}
+
+.input-subreddit {
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 0.3rem 0;
+  padding: 0.3rem;
+}
+footer {
+  text-align: center;
+  display: block;
+  font-size: 1rem;
+}
